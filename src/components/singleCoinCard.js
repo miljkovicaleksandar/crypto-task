@@ -15,16 +15,22 @@ constructor(props){
 }
 handleAmountOfCoin = (e) => {
     this.setState({ amountOfCoin: e.target.value });
-
 }
+
+sumOfAllValues = () =>{
+    return Object.keys(window.localStorage).map(coin=>Number(window.localStorage[coin])).reduce( (accumulator, currentValue) => accumulator + currentValue).toFixed(3);
+}
+
 updateAmountOfCoin = () => {
 
-    localStorage.setItem(`${this.props.coin.id}`, this.state.amountOfCoin);
-    this.setState(prevState => ({ ...prevState, valueUpdated: !prevState.valueUpdated }));
+    localStorage.setItem(`${this.props.coin.id}`, this.state.amountOfCoin * this.props.coin.current_price);
+    console.log(this.sumOfAllValues());
+    this.setState(prevState => ({ ...prevState, valueUpdated: !prevState.valueUpdated, amountOfCoin:""}));  
+     
 }
 
     render(){
-        const {id, name, symbol, image,price_change_percentage_24h,current_price } = this.props.coin;
+        const {id, name, symbol, image, price_change_percentage_24h,current_price } = this.props.coin;
         return(
         <>
             <Link to={`coin-details/${id}`} >
@@ -38,7 +44,8 @@ updateAmountOfCoin = () => {
                         <p style={{color:"green"}}>{price_change_percentage_24h}%</p>:
                         <p style={{color:"red"}}>{price_change_percentage_24h}%</p>}
                         <span>Vrednost</span> 
-                        <p>{Number(localStorage.getItem(this.props.coin.id)) * Number(current_price)}</p>
+                        <p>{Number(localStorage.getItem(this.props.coin.id)).toFixed(3)}</p>
+                        
                     </div>
                 </div >
             </Link>
