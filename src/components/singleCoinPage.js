@@ -12,16 +12,16 @@ class singleCoinPage extends React.Component{
 
     
     render(){
+        
+        
         if(!this.state.singleCoin){
             return "RELOADING>>>>>>>>>>"
         }
        
         return(
-           
-            <>
-                <p>test 01</p>
-                
-            </>
+                <>
+                <p>TEST</p>
+                </>
         )
     }
 

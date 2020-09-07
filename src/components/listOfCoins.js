@@ -1,5 +1,6 @@
 import React from 'react';
 import {fetchCoins} from '../app/services/fetchCoins';
+import SingleCoinCard from './singleCoinCard';
 
 
 
@@ -38,7 +39,7 @@ class listOfCoins extends React.Component{
         
         return(
             <>
-             <p>Test</p>
+             {slicedListOfCoins.map(coin => <SingleCoinCard coin = {coin}  key = {`${coin.id}`} />)}
             </>
         )
     }
