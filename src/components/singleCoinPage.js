@@ -32,7 +32,9 @@ class singleCoinPage extends React.Component{
                 <p>{name}</p>
                 <p>{symbol}</p>
                 <p>${market_data.current_price.usd}</p> 
-                <span >{market_data.price_change_percentage_24h}%</span>
+                {market_data.price_change_percentage_24h > 0 ? 
+                <span style={{color:"green"}}>{market_data.price_change_percentage_24h}%</span> :
+                <span style={{color:"red"}}>{market_data.price_change_percentage_24h}%</span>}
                 
             </>
         )
