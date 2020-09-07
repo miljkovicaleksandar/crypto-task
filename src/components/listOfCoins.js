@@ -15,7 +15,7 @@ class listOfCoins extends React.Component{
        let response = await fetchCoins();
        let coins = response.slice(0,50); 
        this.setState({slicedListOfCoins: coins});
-       console.log(coins)
+       
     }
   
     
