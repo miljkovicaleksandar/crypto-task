@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {fetchSingleCoin} from '../app/services/fetchCoins';
 
 class singleCoinPage extends React.Component{
         constructor(props){
@@ -9,7 +9,15 @@ class singleCoinPage extends React.Component{
         }
     }
 
-
+    async onLoadSingleCoin(id){
+        let coinInfo = await fetchSingleCoin(id);
+        this.setState({singleCoin: coinInfo})
+        console.log(coinInfo);
+        
+    } 
+    componentDidMount(){
+        this.onLoadSingleCoin(this.props.match.params.id)
+    }
     
     render(){
         
@@ -17,11 +25,16 @@ class singleCoinPage extends React.Component{
         if(!this.state.singleCoin){
             return "RELOADING>>>>>>>>>>"
         }
-       
+        const { name, market_data, symbol} = this.state.singleCoin;
         return(
-                <>
-                <p>TEST</p>
-                </>
+           
+            <>
+                <p>{name}</p>
+                <p>{symbol}</p>
+                <p>${market_data.current_price.usd}</p> 
+                <span >{market_data.price_change_percentage_24h}%</span>
+                
+            </>
         )
     }
 
