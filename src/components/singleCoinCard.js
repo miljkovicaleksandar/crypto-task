@@ -21,6 +21,11 @@ handleAmountOfCoin = (e) => {
 //     return Object.keys(window.localStorage).map(coin=>Number(window.localStorage[coin])).reduce( (accumulator, currentValue) => accumulator + currentValue).toFixed(3);
 // }
 
+handleOnEnterKeyDown = (e) =>{
+    if(e.key === "Enter"){
+        this.updateAmountOfCoin();
+    }
+}
 
 updateAmountOfCoin = () => {
 
@@ -48,7 +53,7 @@ updateAmountOfCoin = () => {
                 </div>
             </Link>
             <div className="inputVal">
-                <input value={this.state.amountOfCoin} onChange={this.handleAmountOfCoin} />
+                <input  onKeyPress={this.handleOnEnterKeyDown} value={this.state.amountOfCoin} onChange={this.handleAmountOfCoin} />
                 {this.state.amountOfCoin.length > 0 ? <button onClick={this.updateAmountOfCoin}>Update</button> : <button disabled="true" onClick={this.updateAmountOfCoin}>Update</button>}
                 
             </div>
