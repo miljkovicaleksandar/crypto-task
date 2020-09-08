@@ -11,20 +11,22 @@ class singleCoinPage extends React.Component{
 
     async onLoadSingleCoin(id){
         let coinInfo = await fetchSingleCoin(id);
-        this.setState({singleCoin: coinInfo})
-        console.log(coinInfo);
+        this.setState({singleCoin: coinInfo});
         
     } 
     componentDidMount(){
-        this.onLoadSingleCoin(this.props.match.params.id)
-        console.log(this.state.singleCoin);
+        this.onLoadSingleCoin(this.props.match.params.id);
     }
     
     render(){
         
         
         if(!this.state.singleCoin){
-            return "RELOADING>>>>>>>>>>"
+            return (
+                <>
+                <div class="loader"></div>
+                </>
+            )
         }
         const { name, market_data, symbol, image} = this.state.singleCoin;
         return(

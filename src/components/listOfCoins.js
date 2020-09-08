@@ -32,8 +32,11 @@ class listOfCoins extends React.Component{
     render(){
 
         if(!this.state.slicedListOfCoins){
-            return "LOADING>>>>>>>>>>>>>>>>>>>>"
-        }
+            return (
+                <>
+                    <div class="loader"></div>
+                </>
+            )}
 
         const {slicedListOfCoins} = this.state;
         
