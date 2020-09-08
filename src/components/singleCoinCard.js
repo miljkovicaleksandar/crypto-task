@@ -53,7 +53,8 @@ updateAmountOfCoin = () => {
                 </div>
             </Link>
             <div className="inputVal">
-                <input  onKeyPress={this.handleOnEnterKeyDown} value={this.state.amountOfCoin} onChange={this.handleAmountOfCoin} />
+                {this.state.amountOfCoin.length > 0 ? <input  onKeyPress={this.handleOnEnterKeyDown} value={this.state.amountOfCoin} onChange={this.handleAmountOfCoin}/> : <input value={this.state.amountOfCoin} onChange={this.handleAmountOfCoin} />}
+                
                 {this.state.amountOfCoin.length > 0 ? <button onClick={this.updateAmountOfCoin}>Update</button> : <button disabled="true" onClick={this.updateAmountOfCoin}>Update</button>}
                 
             </div>
