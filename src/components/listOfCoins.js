@@ -1,7 +1,7 @@
 import React from 'react';
 import {fetchCoins} from '../app/services/fetchCoins';
 import SingleCoinCard from './singleCoinCard';
-
+import Header from './Header';
 
 
 class listOfCoins extends React.Component{
@@ -39,7 +39,11 @@ class listOfCoins extends React.Component{
         
         return(
             <>
+             
+             <Header/>
+             <div className="singleCardWrapper">
              {slicedListOfCoins.map(coin => <SingleCoinCard coin = {coin}  key = {`${coin.id}`} />)}
+             </div>
             </>
         )
     }

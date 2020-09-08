@@ -21,11 +21,13 @@ handleAmountOfCoin = (e) => {
 //     return Object.keys(window.localStorage).map(coin=>Number(window.localStorage[coin])).reduce( (accumulator, currentValue) => accumulator + currentValue).toFixed(3);
 // }
 
+
 updateAmountOfCoin = () => {
 
     localStorage.setItem(`${this.props.coin.id}`, this.state.amountOfCoin);
     // console.log(this.sumOfAllValues());
-    this.setState(prevState => ({ ...prevState, valueUpdated: !prevState.valueUpdated, amountOfCoin:""}));  
+    this.setState(prevState => ({ ...prevState, valueUpdated: !prevState.valueUpdated, amountOfCoin:""}));
+      
      
 }
 
@@ -34,23 +36,22 @@ updateAmountOfCoin = () => {
         return(
         <>
             <Link to={`coin-details/${id}`} >
-                <div data-id={`${id}`}>
-                    <div>
-                        <img src={image} />
-                        <p>{symbol}</p>
-                        <p>{name}</p>
-                        <p>${current_price}</p>
-                        {price_change_percentage_24h > 0 ?
-                        <p style={{color:"green"}}>{price_change_percentage_24h}%</p>:
-                        <p style={{color:"red"}}>{price_change_percentage_24h}%</p>}
-                        <span>Vrednost</span> 
-                        <p>${(Number(localStorage.getItem(this.props.coin.id)) * Number(current_price)).toFixed(3)}</p>
-                        
-                    </div>
-                </div >
+                <div className="singleCard">
+                    <span><img src={image} alt=""/> {symbol}</span>
+                    <span>{name}</span>
+                    <span>$ {current_price}</span>
+                    {price_change_percentage_24h > 0 ?
+                    <span style={{color:"green"}}>{price_change_percentage_24h}%</span>:
+                    <span style={{color:"red"}}>{price_change_percentage_24h}%</span>}
+                    <span>$ {(Number(localStorage.getItem(this.props.coin.id)) * Number(current_price)).toFixed(3)}</span>
+                    
+                </div>
             </Link>
-            <input value={this.state.amountOfCoin} onChange={this.handleAmountOfCoin} />
-            <button onClick={this.updateAmountOfCoin}>Update</button>
+            <div className="inputVal">
+                <input value={this.state.amountOfCoin} onChange={this.handleAmountOfCoin} />
+                {this.state.amountOfCoin.length > 0 ? <button onClick={this.updateAmountOfCoin}>Update</button> : <button disabled="true" onClick={this.updateAmountOfCoin}>Update</button>}
+                
+            </div>
         </>
         )
     }}

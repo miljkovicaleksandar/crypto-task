@@ -1,0 +1,140 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+
+//header
+header{
+  max-width: 100%;
+.header-wrapper{
+  align-items: center;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  height: 50px;
+  background-color: #01a7ed;
+  color: white;
+  font-weight: 500;
+  p:nth-child(5){
+    visibility: hidden;
+  }
+  p:nth-child(6){
+    visibility: hidden;
+  }
+  
+} 
+}
+
+.singleCardWrapper{
+  a{
+    text-decoration: none;
+    color:black;
+  }
+  a:nth-child(even){
+    color: purple;
+  }
+  .singleCard{
+      display: flex;
+      justify-content: space-evenly;
+      height: 50px;
+      background-color: #f2f2f2;
+      align-items: center;
+      span{
+        width: 100px;
+      }
+      span:nth-child(1){
+          position: relative;
+          right: 40px;
+          display: flex;
+          align-items: center;
+          img{
+              width: 35px;
+              position: relative;
+              right: 15px;
+          }
+      }span:nth-child(2){
+        position: relative;
+        right: 92px;
+      }
+      span:nth-child(3){
+        position: relative;
+        right: 144px;
+      }
+      span:nth-child(4){
+        position: relative;
+        right: 164px;
+      }
+      span:nth-child(5){
+        position: relative;
+        left: 30px;
+      }
+      span:nth-child(5){
+          
+      }
+      
+  }
+
+}
+
+.inputVal{
+  position: absolute;
+  left: 560px;
+  transform: translateY(-35px);
+  display: flex;
+  input{
+    width: 120px;
+    border: none;
+  }
+  button{
+    background-color: #cccccc;
+    border: none;
+    padding: 4px 7px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 8px;
+    font-weight: bolder;
+  }
+}
+
+//singleCoin
+
+.singleCoinPageWrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  img{
+      margin-bottom: 20px;
+      width: 150px;
+  }
+  &-title{
+      display: flex;
+      align-items: center;
+     
+  }
+  .singleCoinPageWrapper-values{
+      position: relative;
+      left: 20px;
+      &-priceChnage{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      p{
+          margin-bottom: 20px;
+          font-weight: 500;
+      }
+  }
+}
