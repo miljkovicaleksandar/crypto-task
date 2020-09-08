@@ -33,6 +33,10 @@ header{
   p:nth-child(6){
     visibility: hidden;
   }
+  p:nth-child(7){
+    position: relative;
+    left: 100px;
+  }
   
 } 
 }
@@ -80,9 +84,7 @@ header{
       span:nth-child(5){
         position: relative;
         left: 70px;
-      }
-      span:nth-child(5){
-          
+        text-align: right;
       }
       
   }
@@ -192,4 +194,46 @@ header{
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+//responsive
+@media all and (max-width: 1280px){
+
+  //listOfCoins
+.singleCardWrapper{
+ 
+ 
+  .singleCard{
+      
+      
+      span:nth-child(1){
+          left: 10px;
+      }span:nth-child(2){
+        position: relative;
+        right: 72px;
+      }
+      span:nth-child(3){
+        position: relative;
+        right: 150px;
+      }
+      span:nth-child(4){
+        position: relative;
+        right: 225px;
+      }
+      span:nth-child(5){
+        position: relative;
+        left: 50px;
+        text-align: right;
+      }
+      
+      
+  }
+
+}
+
+
+.inputVal{
+  left:780px;
+}
+
 }
