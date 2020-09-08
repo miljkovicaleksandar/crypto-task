@@ -41,8 +41,10 @@ class singleCoinPage extends React.Component{
                     <div className="singleCoinPageWrapper-values">
                         <p>Price: $ {market_data.current_price.usd} </p>
                         {market_data.price_change_percentage_24h > 0 ? 
-                        <p style={{color:"green"}}>Price change: {market_data.price_change_percentage_24h}%</p> :
-                        <p style={{color:"red"}}>Price change:{market_data.price_change_percentage_24h}%</p>}
+                        <div className="priceChange" ><p>Price Change: </p><p style={{color:"green"}}>{market_data.price_change_percentage_24h}%</p></div>
+                         :
+                        <div className="priceChange" ><p>Price Change: </p><p style={{color:"red"}}>{market_data.price_change_percentage_24h}%</p></div>}
+                        
                         <p>Value: $ {(Number(localStorage.getItem(this.props.match.params.id)) * Number(market_data.current_price.usd)).toFixed(3)}</p>
                     </div>
                 </div>

@@ -37,14 +37,15 @@ header{
 } 
 }
 
+//listOfCoins
+
 .singleCardWrapper{
+  
   a{
     text-decoration: none;
     color:black;
   }
-  a:nth-child(even){
-    color: purple;
-  }
+ 
   .singleCard{
       display: flex;
       justify-content: space-evenly;
@@ -88,9 +89,28 @@ header{
 
 }
 
+.upArrow{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ img{
+   width: 20px;
+   margin-right: 5px;
+ }
+}
+.downArrow{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ img{
+   width: 20px;
+   margin-right: 5px;
+ }
+}
+
 .inputVal{
   position: absolute;
-  left: 560px;
+  left: 585px;
   transform: translateY(-35px);
   display: flex;
   input{
@@ -137,6 +157,11 @@ header{
           font-weight: 500;
       }
   }
+
+  .priceChange{
+    display: flex;
+  }
+  
 }
 
 //loader

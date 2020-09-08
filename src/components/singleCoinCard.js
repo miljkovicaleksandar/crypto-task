@@ -46,8 +46,8 @@ updateAmountOfCoin = () => {
                     <span>{name}</span>
                     <span>$ {current_price}</span>
                     {price_change_percentage_24h > 0 ?
-                    <span style={{color:"green"}}>{price_change_percentage_24h}%</span>:
-                    <span style={{color:"red"}}>{price_change_percentage_24h}%</span>}
+                    <span className="upArrow" style={{color:"green"}}><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Green-Up-Arrow.svg/1200px-Green-Up-Arrow.svg.png"/>{price_change_percentage_24h}%</span>:
+                    <span className="downArrow" style={{color:"red"}}><img src="https://library.kissclipart.com/20180831/oxe/kissclipart-down-red-clipart-computer-icons-clip-art-e10b82e1ef81f823.jpg"/>{price_change_percentage_24h}%</span>}
                     <span>$ {(Number(localStorage.getItem(this.props.coin.id)) * Number(current_price)).toFixed(3)}</span>
                     
                 </div>
@@ -56,7 +56,7 @@ updateAmountOfCoin = () => {
 
                 {this.state.amountOfCoin.length > 0 ? <input  onKeyPress={this.handleOnEnterKeyDown} value={this.state.amountOfCoin} onChange={this.handleAmountOfCoin}/> : <input value={this.state.amountOfCoin} onChange={this.handleAmountOfCoin} />}
                 
-                {this.state.amountOfCoin.length > 0 ? <button onClick={this.updateAmountOfCoin}>Update</button> : <button disabled="true" onClick={this.updateAmountOfCoin}>Update</button>}
+                {this.state.amountOfCoin.length > 0 ? <button onClick={this.updateAmountOfCoin}>Update</button> : <button disabled={true} onClick={this.updateAmountOfCoin}>Update</button>}
                 
             </div>
         </>
