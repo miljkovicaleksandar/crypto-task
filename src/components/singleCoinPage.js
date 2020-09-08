@@ -34,8 +34,8 @@ class singleCoinPage extends React.Component{
                 <p>${market_data.current_price.usd}</p> 
                 {market_data.price_change_percentage_24h > 0 ? 
                 <span style={{color:"green"}}>{market_data.price_change_percentage_24h}%</span> :
-                <span style={{color:"red"}}>{market_data.price_change_percentage_24h}%</span>}
-                
+                <span style={{color:"red"}}>Price change:{market_data.price_change_percentage_24h}%</span>}
+                <p>Value: ${(Number(localStorage.getItem(this.props.match.params.id)) * Number(market_data.current_price.usd)).toFixed(3)}</p>
             </>
         )
     }
