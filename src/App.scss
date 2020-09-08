@@ -40,7 +40,7 @@ header{
 //listOfCoins
 
 .singleCardWrapper{
-  
+  font-size: 20px;
   a{
     text-decoration: none;
     color:black;
@@ -53,7 +53,7 @@ header{
       background-color: #f2f2f2;
       align-items: center;
       span{
-        width: 100px;
+        width: 175px;
       }
       span:nth-child(1){
           position: relative;
@@ -67,19 +67,19 @@ header{
           }
       }span:nth-child(2){
         position: relative;
-        right: 92px;
+        right: 122px;
       }
       span:nth-child(3){
         position: relative;
-        right: 144px;
+        right: 225px;
       }
       span:nth-child(4){
         position: relative;
-        right: 164px;
+        right: 330px;
       }
       span:nth-child(5){
         position: relative;
-        left: 30px;
+        left: 70px;
       }
       span:nth-child(5){
           
@@ -110,12 +110,16 @@ header{
 
 .inputVal{
   position: absolute;
-  left: 585px;
+  left:1230px;
   transform: translateY(-35px);
   display: flex;
+  height: 30px;
   input{
-    width: 120px;
+    
     border: none;
+  }
+  input:focus{
+    outline:none;
   }
   button{
     background-color: #cccccc;
@@ -136,17 +140,18 @@ header{
   align-items: center;
   flex-direction: column;
   img{
-      margin: 20px 0px;
-      width: 150px;
+      margin: 120px 0px 20px 0px;
+      width: 200px;
   }
   &-title{
       display: flex;
       align-items: center;
+      font-size: 20px;
      
   }
   .singleCoinPageWrapper-values{
       position: relative;
-      left: 20px;
+      left: 40px;
       &-priceChnage{
         display: flex;
         justify-content: center;
@@ -155,6 +160,7 @@ header{
       p{
           margin-bottom: 20px;
           font-weight: 500;
+          font-size: 24px;
       }
   }
 
