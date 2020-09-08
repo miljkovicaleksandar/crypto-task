@@ -37,8 +37,7 @@ class singleCoinPage extends React.Component{
                         <h1>{name}</h1><span className="singleCoinPageWrapper-title-ticker">({symbol})</span>
                     </div>
                     <div className="singleCoinPageWrapper-values">
-                        <p>Cena: $ {market_data.current_price.usd} </p>
-                        <p>Vrednost: $ {market_data.current_price.usd}</p>
+                        <p>Price: $ {market_data.current_price.usd} </p>
                         {market_data.price_change_percentage_24h > 0 ? 
                         <p style={{color:"green"}}>Price change: {market_data.price_change_percentage_24h}%</p> :
                         <p style={{color:"red"}}>Price change:{market_data.price_change_percentage_24h}%</p>}
